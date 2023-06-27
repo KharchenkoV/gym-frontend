@@ -66,7 +66,7 @@ const Login = () => {
                         <LockOutlinedIcon />
                     </Avatar>
                     <Typography component="h1" variant="h5">
-                        Sign up
+                        Вхід
                     </Typography>
                     <Box component="form" noValidate onSubmit={handleSubmit} sx={{ mt: 3 }}>
                         <Grid container spacing={2}>
@@ -96,12 +96,12 @@ const Login = () => {
                             variant="contained"
                             sx={{ mt: 3, mb: 2 }}
                         >
-                            Реєстрація
+                            Увійти
                         </Button>
                         <Grid container justifyContent="flex-end">
                             <Grid item>
                                 <Link variant="body2" to={'/'}>
-                                    Already have an account? Sign in
+                                    Немає акаунта? Зареєструватись
                                 </Link>
                             </Grid>
                         </Grid>

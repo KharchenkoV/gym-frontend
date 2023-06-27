@@ -84,7 +84,7 @@ const Register = () => {
                                 <LockOutlinedIcon />
                             </Avatar>
                             <Typography component="h1" variant="h5">
-                                Sign up
+                                Реєстрація
                             </Typography>
                             <Box component="form" noValidate onSubmit={handleSubmit} sx={{ mt: 3 }}>
                                 <Grid container spacing={2}>
@@ -149,7 +149,7 @@ const Register = () => {
                                 <Grid container justifyContent="flex-end">
                                     <Grid item>
                                         <Link variant="body2" to={'/'}>
-                                            Already have an account? Sign in
+                                            Вже є акаунт? Увійти
                                         </Link>
                                     </Grid>
                                 </Grid>

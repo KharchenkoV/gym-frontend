@@ -4,7 +4,7 @@ import Detail from './Detail'
 import SimilarExercises from '../pages/SimilarExercises'
 import { useParams } from 'react-router-dom'
 import ExerciseService from '../services/exercise.service'
-import {bodyParts} from "../pages/constants";
+import {bodyParts, target, equipment} from "../pages/constants";
 
 const ExerciseDetails = () => {
     const [exerciseDetail, setExerciseDetail] = useState({});
@@ -18,15 +18,17 @@ const ExerciseDetails = () => {
         const fetchExercisesData = async () => {
 
             const exerciseDetailData = await ExerciseService.getExerciseById(id)
-            exerciseDetailData.bodyPart = bodyParts[exerciseDetailData.bodyPart.toLowerCase()];
-            setExerciseDetail(exerciseDetailData)
+            
 
             const targetMuscleExercisesData = await ExerciseService.getExercisesByTarget(exerciseDetailData.target)
             setTargetMuscleExercises(targetMuscleExercisesData);
 
             const equipmentExercisesData = await ExerciseService.getExercisesByEquipment(exerciseDetailData.equipment)
             setEquipmentExercises(equipmentExercisesData);
-            console.log(exerciseDetailData)
+            exerciseDetailData.bodyPart = bodyParts[exerciseDetailData.bodyPart.toLowerCase()];
+            exerciseDetailData.target = target[exerciseDetailData.target.toLowerCase()];
+            exerciseDetailData.equipment = equipment[exerciseDetailData.equipment.toLowerCase()];
+            setExerciseDetail(exerciseDetailData)
         };
 
         fetchExercisesData();

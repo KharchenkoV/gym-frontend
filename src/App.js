@@ -11,6 +11,7 @@ import Register from "./components/Register";
 import Login from "./components/Login";
 import {useEffect} from "react";
 import jwt from "jwt-decode";
+import Account from "./components/Account";
 
 function App() {
     useEffect(() => {
@@ -28,6 +29,7 @@ function App() {
             <Navbar/>
             <Routes>
                 <Route index element={<Home/>}/>
+                <Route path="/account" element={<Account/>} />
                 <Route path="/login" element={<Login/>}/>
                 <Route path="/register" element={<Register/>}/>
                 <Route path="/exercises" element={<ExercisePage/>}/>
